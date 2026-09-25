@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 430" role="img" aria-labelledby="title desc">
+  <title id="title">Data Changes Council</title>
+  <desc id="desc">Data changes opinions. Perspectives change decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#073546"/>
+      <stop offset="1" stop-color="#0C5361"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="430" rx="30" fill="url(#bg)"/>
+  <circle cx="1150" cy="70" r="170" fill="#C1CDBF" opacity=".13" filter="url(#soft)"/>
+  <circle cx="1250" cy="350" r="190" fill="#FA6A48" opacity=".13" filter="url(#soft)"/>
+  <g fill="none" stroke="#C1CDBF" stroke-width="4" opacity=".82">
+    <path d="M830 105 C990 105 1010 185 1130 215"/>
+    <path d="M830 215 C990 215 1020 215 1130 215"/>
+    <path d="M830 325 C990 325 1010 245 1130 215"/>
+  </g>
+  <path d="M1130 215 C1200 215 1230 215 1300 215" fill="none" stroke="#FA6A48" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#F8F5EE" stroke="#C1CDBF" stroke-width="4">
+    <circle cx="790" cy="105" r="34"/><circle cx="790" cy="215" r="34"/><circle cx="790" cy="325" r="34"/>
+    <circle cx="1140" cy="215" r="53" fill="#C1CDBF"/>
+    <circle cx="1310" cy="215" r="30" fill="#FA6A48" stroke="#F8F5EE"/>
+  </g>
+  <g fill="#073546" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <text x="790" y="113" font-size="22">A</text><text x="790" y="223" font-size="22">B</text><text x="790" y="333" font-size="22">C</text>
+    <text x="1140" y="223" font-size="22">↔</text><text x="1310" y="223" font-size="22">✓</text>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <text x="80" y="145" fill="#F8F5EE" font-size="56" font-weight="700" letter-spacing="2">DATA CHANGES</text>
+    <text x="80" y="210" fill="#C1CDBF" font-size="56" font-weight="700" letter-spacing="2">COUNCIL</text>
+    <text x="84" y="278" fill="#F8F5EE" font-size="28">Data changes opinions.</text>
+    <text x="84" y="320" fill="#C1CDBF" font-size="28">Perspectives change decisions.</text>
+    <text x="84" y="370" fill="#F8F5EE" opacity=".78" font-size="18">Visible dissent · Evidence · Human approval</text>
+  </g>
+</svg>

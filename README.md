@@ -1,6 +1,6 @@
 # Data Changes Council
 
-![Data Changes Council social preview](assets/data-changes-council-social-preview.jpg)
+![Data Changes Council](assets/data-changes-council-header.svg)
 
 **A practical council for comparing AI answers before people act on them.**
 
@@ -67,6 +67,39 @@ See [ROADMAP.md](ROADMAP.md) for the implementation sequence and [GOVERNANCE.md]
 The council keeps the useful disagreement visible until a person has enough context to approve, revise, or stop the recommendation.
 
 ![Dissent and human approval](assets/dissent-and-approval.svg)
+
+## Install with the CLI
+
+Use the CLI when you want reproducible setup, branches, commits, and scripted deployments.
+
+```bash
+git clone https://github.com/anouar-zh/data-changes-council.git
+cd data-changes-council
+npm install
+npm run build
+```
+
+Copy `.env.example` to `.env` and add only the provider keys you need. Keep `.env` local and never commit API keys.
+
+Start the development server with:
+
+```bash
+npm run dev:server
+```
+
+## Install with GitHub Desktop
+
+Use GitHub Desktop if you prefer a visual workflow.
+
+1. Open GitHub Desktop and sign in to `anouar-zh`.
+2. Choose **File → Clone repository → URL**.
+3. Enter `https://github.com/anouar-zh/data-changes-council.git`.
+4. Choose a local folder and click **Clone**.
+5. Open the folder in your editor.
+6. Run `npm install` and `npm run build` in the editor terminal.
+7. Make changes in a branch, review the diff in GitHub Desktop, then commit and push.
+
+GitHub Desktop handles cloning and commits. Node.js and npm are still required to install and run the TypeScript project.
 
 ## Quick start
 
