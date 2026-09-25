@@ -11,28 +11,31 @@ There is no application to install and no API key to configure. The main file is
 ## What it helps with
 
 - comparing several AI answers before acting;
-- spotting shared assumptions and weak sources;
-- turning disagreement into a useful review;
-- writing a decision record someone else can inspect;
-- keeping ownership and human approval clear.
+- routing review depth by impact and reversibility;
+- spotting shared assumptions, weak sources, and prompt injection;
+- testing a minority view instead of hiding it;
+- turning disagreement into a decision record someone else can inspect;
+- keeping ownership, action boundaries, and human approval clear.
 
 ## Why use it instead of a basic model council?
 
-The skill changes the work before the final answer is written:
+The skill changes the decision process:
 
-- it routes review depth by impact and reversibility;
+- it uses the smallest sufficient council instead of a fixed model count;
 - it keeps a claim ledger instead of a vague confidence score;
-- it gives dissent a reason and a status;
-- it has stop rules for missing evidence, unclear data boundaries, and missing ownership;
-- it ends with the smallest test a team can actually run.
+- it treats consensus as a routing signal, not proof;
+- it gives dissent a reason, a challenge, and a status;
+- it stops when evidence, ownership, or data boundaries are missing;
+- it ends with the smallest safe test a team can actually run;
+- it records outcomes so the process can be calibrated over time.
 
 ## How to use it
 
-Use the skill when a question is ambiguous, consequential, or worth reviewing from different perspectives. Give it the question, relevant context, constraints, and the decision owner.
+Use the skill when a question is ambiguous, consequential, or worth reviewing from different perspectives. Give it the question, relevant context, constraints, permitted data or tools, and the decision owner.
 
 Example request:
 
-> Use the Data Changes Council approach to compare three ways to introduce an AI assistant into our support process. Keep data risks, human review, cost, and unresolved assumptions visible. End with a small next test and the person who should approve it.
+> Use the Data Changes Council approach to compare three ways to introduce an AI assistant into our support process. Route the review by risk, keep data risks and unresolved assumptions visible, challenge any material minority view, and end with a small next test and the person who should approve it.
 
 The expected result is a decision record, not a vote that pretends to be the truth.
 
@@ -41,6 +44,7 @@ The expected result is a decision record, not a vote that pretends to be the tru
 - [SKILL.md](SKILL.md): the reusable skill.
 - [examples/decision-record.md](examples/decision-record.md): a compact example of the output.
 - [GOVERNANCE.md](GOVERNANCE.md): boundaries for data, tools, logging, and human approval.
+- [RESEARCH.md](RESEARCH.md): public research and design rationale.
 - [assets/architecture-overview.svg](assets/architecture-overview.svg): the council flow.
 - [assets/dissent-and-approval.svg](assets/dissent-and-approval.svg): why dissent stays visible.
 - [ORIGIN.md](ORIGIN.md): open-source origin and attribution.
