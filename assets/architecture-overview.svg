@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" role="img" aria-labelledby="title desc">
+  <title id="title">Data Changes Council workflow</title>
+  <desc id="desc">A five step flow from question and policy checks to independent answers, peer review, synthesis and human approval.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F8F5EE"/>
+      <stop offset="1" stop-color="#E8EFE8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#073546" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="520" rx="28" fill="url(#bg)"/>
+  <path d="M190 258H1210" stroke="#C1CDBF" stroke-width="8" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g filter="url(#shadow)">
+      <rect x="55" y="150" width="220" height="210" rx="22" fill="#073546"/>
+      <rect x="320" y="150" width="220" height="210" rx="22" fill="#C1CDBF"/>
+      <rect x="585" y="150" width="220" height="210" rx="22" fill="#F8F5EE" stroke="#073546" stroke-width="3"/>
+      <rect x="850" y="150" width="220" height="210" rx="22" fill="#C1CDBF"/>
+      <rect x="1115" y="150" width="230" height="210" rx="22" fill="#FA6A48"/>
+    </g>
+    <g fill="#F8F5EE" font-size="24" font-weight="700">
+      <text x="165" y="205">01</text><text x="165" y="245">Question</text><text x="165" y="278">+ policy</text>
+      <text x="430" y="205" fill="#073546">02</text><text x="430" y="245" fill="#073546">Independent</text><text x="430" y="278" fill="#073546">answers</text>
+      <text x="695" y="205" fill="#073546">03</text><text x="695" y="245" fill="#073546">Peer</text><text x="695" y="278" fill="#073546">review</text>
+      <text x="960" y="205" fill="#073546">04</text><text x="960" y="245" fill="#073546">Synthesis</text><text x="960" y="278" fill="#073546">+ dissent</text>
+      <text x="1230" y="205">05</text><text x="1230" y="245">Human</text><text x="1230" y="278">approval</text>
+    </g>
+    <g fill="#073546" font-size="17">
+      <text x="165" y="320" fill="#C1CDBF">data class · scope</text>
+      <text x="430" y="320">models · sources</text>
+      <text x="695" y="320">rubric · reasons</text>
+      <text x="960" y="320">evidence · limits</text>
+      <text x="1230" y="320" fill="#F8F5EE">reviewer · action</text>
+    </g>
+    <g fill="#073546" font-size="18" font-weight="700">
+      <text x="700" y="82" font-size="30">Data Changes Council</text>
+      <text x="700" y="116" font-size="18" font-weight="400">Consensus is a routing signal. It is not a truth score.</text>
+    </g>
+  </g>
+</svg>

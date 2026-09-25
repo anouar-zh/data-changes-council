@@ -60,6 +60,14 @@ human approval or escalation
 
 See [ROADMAP.md](ROADMAP.md) for the implementation sequence and [GOVERNANCE.md](GOVERNANCE.md) for the safety boundaries.
 
+## A session at a glance
+
+![Data Changes Council architecture](assets/architecture-overview.svg)
+
+The council keeps the useful disagreement visible until a person has enough context to approve, revise, or stop the recommendation.
+
+![Dissent and human approval](assets/dissent-and-approval.svg)
+
 ## Quick start
 
 ```bash
