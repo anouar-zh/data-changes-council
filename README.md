@@ -1,5 +1,7 @@
 # Data Changes Council
 
+![Data Changes Council social preview](assets/data-changes-council-social-preview.jpg)
+
 **A practical council for comparing AI answers before people act on them.**
 
 Data Changes Council sends a task to several language models, keeps their first answers independent, asks them to review a structured rubric, and returns a synthesis with disagreement visible. A person remains responsible for the decision.
