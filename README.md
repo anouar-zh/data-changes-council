@@ -2,116 +2,47 @@
 
 ![Data Changes Council](assets/data-changes-council-header.svg)
 
-**A practical council for comparing AI answers before people act on them.**
+**Data changes opinions. Perspectives change decisions.**
 
-Data Changes Council sends a task to several language models, keeps their first answers independent, asks them to review a structured rubric, and returns a synthesis with disagreement visible. A person remains responsible for the decision.
+Data Changes Council is a small, reusable skill for decisions that deserve more than one AI perspective. It separates proposal, challenge, evidence checking, and operational reality instead of treating model agreement as proof.
 
-This project is designed for teams that want to use multiple LLMs without hiding uncertainty behind a single confident answer.
+There is no application to install and no API key to configure. The main file is the skill itself: [SKILL.md](SKILL.md).
 
-## Why Data Changes Council
+## What it helps with
 
-A single model can miss a constraint, rely on a weak assumption, or sound certain when the evidence is thin. A council can expose differences in reasoning. It does not make a wrong source correct, and agreement is not proof.
+- comparing several AI answers before acting;
+- spotting shared assumptions and weak sources;
+- turning disagreement into a useful review;
+- writing a decision record someone else can inspect;
+- keeping ownership and human approval clear.
 
-Data Changes Council therefore treats these as first-class output:
+## Why use it instead of a basic model council?
 
-- independent answers and their sources;
-- rubric scores with the reason for each score;
-- dissent and unresolved questions;
-- estimated cost and latency;
-- a human approval state before any external action.
+The skill changes the work before the final answer is written:
 
-## Current state
+- it routes review depth by impact and reversibility;
+- it keeps a claim ledger instead of a vague confidence score;
+- it gives dissent a reason and a status;
+- it has stop rules for missing evidence, unclear data boundaries, and missing ownership;
+- it ends with the smallest test a team can actually run.
 
-The repository is an early TypeScript foundation. The deliberation engine currently contains routing and result types, while provider calls and the full review pipeline are being built in small, inspectable steps.
+## How to use it
 
-The first release will focus on decision support. It will not execute emails, code changes, purchases, or other external actions automatically.
+Use the skill when a question is ambiguous, consequential, or worth reviewing from different perspectives. Give it the question, relevant context, constraints, and the decision owner.
 
-## Planned workflow
+Example request:
 
-```text
-question and context
-        |
-        v
-policy and data checks
-        |
-        v
-independent model responses
-        |
-        v
-structured peer review
-        |
-        v
-synthesis with consensus and dissent
-        |
-        v
-human approval or escalation
-```
+> Use the Data Changes Council approach to compare three ways to introduce an AI assistant into our support process. Keep data risks, human review, cost, and unresolved assumptions visible. End with a small next test and the person who should approve it.
 
-## Planned improvements over a basic LLM council
+The expected result is a decision record, not a vote that pretends to be the truth.
 
-1. **Evidence first**: attach source references and mark claims that still need checking.
-2. **Useful disagreement**: preserve dissent instead of reducing every vote to a percentage.
-3. **Risk based routing**: use a small council for simple tasks and escalate only when ambiguity or impact warrants it.
-4. **Governance gates**: classify input data, restrict tools, log decisions, and require approval for high impact actions.
-5. **Provider portability**: use adapters so one provider outage does not stop the whole council.
-6. **Reproducible sessions**: store model versions, prompts, rubric versions, timestamps, and costs.
-7. **Evaluation before confidence**: measure council performance on a task set instead of treating agreement as accuracy.
-8. **Dutch and English support**: keep the decision record readable for the people who own the work.
+## Repository map
 
-See [ROADMAP.md](ROADMAP.md) for the implementation sequence and [GOVERNANCE.md](GOVERNANCE.md) for the safety boundaries.
+- [SKILL.md](SKILL.md): the reusable skill.
+- [examples/decision-record.md](examples/decision-record.md): a compact example of the output.
+- [GOVERNANCE.md](GOVERNANCE.md): boundaries for data, tools, logging, and human approval.
+- [assets/architecture-overview.svg](assets/architecture-overview.svg): the council flow.
+- [assets/dissent-and-approval.svg](assets/dissent-and-approval.svg): why dissent stays visible.
+- [ORIGIN.md](ORIGIN.md): open-source origin and attribution.
 
-## A session at a glance
-
-![Data Changes Council architecture](assets/architecture-overview.svg)
-
-The council keeps the useful disagreement visible until a person has enough context to approve, revise, or stop the recommendation.
-
-![Dissent and human approval](assets/dissent-and-approval.svg)
-
-## Install with the CLI
-
-Use the CLI when you want reproducible setup, branches, commits, and scripted deployments.
-
-```bash
-git clone https://github.com/anouar-zh/data-changes-council.git
-cd data-changes-council
-npm install
-npm run build
-```
-
-Copy `.env.example` to `.env` and add only the provider keys you need. Keep `.env` local and never commit API keys.
-
-Start the development server with:
-
-```bash
-npm run dev:server
-```
-
-## Install with GitHub Desktop
-
-Use GitHub Desktop if you prefer a visual workflow.
-
-1. Open GitHub Desktop and sign in to `anouar-zh`.
-2. Choose **File → Clone repository → URL**.
-3. Enter `https://github.com/anouar-zh/data-changes-council.git`.
-4. Choose a local folder and click **Clone**.
-5. Open the folder in your editor.
-6. Run `npm install` and `npm run build` in the editor terminal.
-7. Make changes in a branch, review the diff in GitHub Desktop, then commit and push.
-
-GitHub Desktop handles cloning and commits. Node.js and npm are still required to install and run the TypeScript project.
-
-## Quick start
-
-```bash
-npm install
-npm run build
-```
-
-Copy `.env.example` to `.env` and add only the provider keys you need. Never commit `.env` or API keys.
-
-## Project origin and license
-
-Data Changes Council is a modified fork of [OliWoods-Org/llm-council](https://github.com/OliWoods-Org/llm-council). The upstream repository is licensed under Apache 2.0. See [ORIGIN.md](ORIGIN.md) and [LICENSE](LICENSE) for attribution and license terms.
-
-Data Changes Council is an independent project by Anouar Znagui Hassani / Data Changes. It is not affiliated with or endorsed by the upstream project or any model provider.
+Data Changes Council is an independent project by Anouar Znagui Hassani / Data Changes.

@@ -1,6 +1,6 @@
 # Governance boundaries
 
-CouncilForge is decision support. It is not an autonomous decision maker.
+Data Changes Council is decision support. It is not an autonomous decision maker.
 
 ## Required controls
 
