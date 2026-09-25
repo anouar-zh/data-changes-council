@@ -17,3 +17,7 @@ Data Changes Council is decision support. It is not an autonomous decision maker
 ## Confidence language
 
 Consensus is a routing signal, not a truth score. The record should say what the models agreed on, what they did not check, which claims remain uncertain, and what a person still needs to verify.
+
+## Disclaimer
+
+Read [DISCLAIMER.md](DISCLAIMER.md) before using or redistributing this repository. The Apache License 2.0 remains the governing open-source licence. The disclaimer does not replace a separate commercial agreement or legal review.

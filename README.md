@@ -132,6 +132,7 @@ The expected result is a decision record, not a vote that pretends to be the tru
 - [SKILL.md](SKILL.md): the reusable skill.
 - [examples/decision-record.md](examples/decision-record.md): a compact example of the output.
 - [GOVERNANCE.md](GOVERNANCE.md): boundaries for data, tools, logging, and human approval.
+- [DISCLAIMER.md](DISCLAIMER.md): usage, warranty, liability, and third-party service boundaries.
 - [RESEARCH.md](RESEARCH.md): public research and design rationale.
 - [assets/architecture-overview.svg](assets/architecture-overview.svg): the council flow.
 - [assets/dissent-and-approval.svg](assets/dissent-and-approval.svg): why dissent stays visible.

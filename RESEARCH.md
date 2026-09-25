@@ -48,3 +48,5 @@ The sources informed the design. They do not endorse this repository.
 - [Anthropic Projects](https://support.anthropic.com/en/articles/9519177-how-can-i-create-and-manage-projects): project knowledge and project instructions.
 
 Product surfaces change. The repository distinguishes native skill installation from uploading `SKILL.md` as project or chat context, because those are different mechanisms.
+- [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html): warranty and liability language already included in the repository licence.
+- [ACM ConsuWijzer on general terms](https://consument.acm.nl/aankoop-dienst-annuleren/algemene-voorwaarden): a disclaimer does not automatically make every liability limitation valid, especially in consumer contracts.
