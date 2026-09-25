@@ -1,5 +1,5 @@
 {
-  "name": "councilforge",
+  "name": "data-changes-council",
   "version": "0.1.0",
   "description": "Evidence-aware multi-model deliberation with visible dissent, policy gates, and human approval.",
   "main": "dist/index.js",

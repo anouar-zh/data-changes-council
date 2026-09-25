@@ -13,7 +13,7 @@ I design and build practical solutions at the intersection of data, AI and softw
 
 ## Current project
 
-[CouncilForge](https://github.com/anouar-zh/councilforge) is an open source experiment in multi-model deliberation. It compares independent LLM answers, keeps dissent visible, and puts human approval before external actions.
+[Data Changes Council](https://github.com/anouar-zh/data-changes-council) is an open source experiment in multi-model deliberation. It compares independent LLM answers, keeps dissent visible, and puts human approval before external actions.
 
 ## Connect
 

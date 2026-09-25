@@ -1,16 +1,16 @@
-# CouncilForge
+# Data Changes Council
 
 **A practical council for comparing AI answers before people act on them.**
 
-CouncilForge sends a task to several language models, keeps their first answers independent, asks them to review a structured rubric, and returns a synthesis with disagreement visible. A person remains responsible for the decision.
+Data Changes Council sends a task to several language models, keeps their first answers independent, asks them to review a structured rubric, and returns a synthesis with disagreement visible. A person remains responsible for the decision.
 
 This project is designed for teams that want to use multiple LLMs without hiding uncertainty behind a single confident answer.
 
-## Why CouncilForge
+## Why Data Changes Council
 
 A single model can miss a constraint, rely on a weak assumption, or sound certain when the evidence is thin. A council can expose differences in reasoning. It does not make a wrong source correct, and agreement is not proof.
 
-CouncilForge therefore treats these as first-class output:
+Data Changes Council therefore treats these as first-class output:
 
 - independent answers and their sources;
 - rubric scores with the reason for each score;
@@ -69,6 +69,6 @@ Copy `.env.example` to `.env` and add only the provider keys you need. Never com
 
 ## Project origin and license
 
-CouncilForge is a modified fork of [OliWoods-Org/llm-council](https://github.com/OliWoods-Org/llm-council). The upstream repository is licensed under Apache 2.0. See [ORIGIN.md](ORIGIN.md) and [LICENSE](LICENSE) for attribution and license terms.
+Data Changes Council is a modified fork of [OliWoods-Org/llm-council](https://github.com/OliWoods-Org/llm-council). The upstream repository is licensed under Apache 2.0. See [ORIGIN.md](ORIGIN.md) and [LICENSE](LICENSE) for attribution and license terms.
 
-CouncilForge is an independent project by Anouar Znagui Hassani / Data Changes. It is not affiliated with or endorsed by the upstream project or any model provider.
+Data Changes Council is an independent project by Anouar Znagui Hassani / Data Changes. It is not affiliated with or endorsed by the upstream project or any model provider.
