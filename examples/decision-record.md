@@ -37,6 +37,10 @@ One perspective recommends a broad pilot. The other perspectives recommend a nar
 | A human can approve every draft | proposed control | support lead process | current process | observed | high | confirm workflow |
 | The pilot will save time | predicted | no result yet | not available | none | medium | measure correction time |
 
+## Decision status
+
+**Proposed.** The support lead has not yet approved the pilot.
+
 ## Recommendation and stop rule
 
 Run a two-week test on one category of low-risk questions. The assistant may draft, but cannot send. Stop expansion if personal data cannot be minimised, source coverage is inadequate, or reviewers cannot check drafts in time.
@@ -55,4 +59,5 @@ Timestamp: 2026-09-25
 Models or passes: four independent role passes plus one minority challenge
 Sources: approved support material, to be listed before the pilot
 Rounds: 1
+Decision status: proposed
 Material cost or latency: not measured yet

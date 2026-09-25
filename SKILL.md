@@ -18,6 +18,20 @@ Use this skill when a decision is ambiguous, consequential, or worth reviewing f
 3. **Protect the minority view.** If one perspective disagrees about a material claim, run a minority challenge: state its strongest assumption, test that assumption, and record the result. Do not discard a minority view because it is outnumbered.
 4. **Use the smallest sufficient council.** Start with the lowest review depth that fits the risk. Add a source check, red-team pass, or operator pass only when uncertainty or impact justifies it. Set a round limit before starting.
 5. **Propose before executing.** The default output is a recommendation or draft. Sending messages, changing production systems, spending money, or affecting people requires explicit approval from the named human owner.
+6. **Do not overstate independence.** Different model names do not guarantee independent errors. Label perspectives as independent only when their context, source path, and reasoning pass are meaningfully separate. Otherwise label them correlated or simulated.
+7. **Ask only for decision-critical missing input.** If a missing detail changes the risk class, data boundary, owner, or recommendation, ask for it or mark the decision blocked. For low-impact questions, state the assumption and continue.
+
+## Minimum input
+
+Before reviewing, capture the minimum needed to make the result reviewable:
+
+- the decision question and desired outcome;
+- the people or systems affected;
+- constraints, deadline, reversibility, and action boundary;
+- data sensitivity and permitted tools;
+- the human owner and what approval means.
+
+Do not invent missing context. Mark assumptions explicitly. If the request is only to explore options, keep the output exploratory and do not imply approval.
 
 ## Risk routing
 
@@ -58,7 +72,7 @@ For every material claim, record:
 |---|---|---|---|---|---|---|
 | What is being asserted | confirmed, inferred, predicted, unknown, or blocked | URL, document, measurement, or none | when it was published or observed | independent, shared, or unclear | low, medium, or high | check needed before action |
 
-Do not call a claim confirmed when the only support is model agreement. If a source is missing, stale, inaccessible, or in conflict, say so.
+Do not call a claim confirmed when the only support is model agreement. If a source is missing, stale, inaccessible, or in conflict, say so. Record whether a source is primary, secondary, internal, or a model assertion. A source can support a claim without proving that the recommendation is right.
 
 ### 5. Resolve or preserve dissent
 
@@ -78,7 +92,19 @@ Stop at recommendation level and escalate when any of these is true:
 
 When stopped, recommend the smallest safe test or the exact evidence needed next. Never hide a blocked decision behind a confidence percentage.
 
-### 7. Record and learn
+### 7. Assign a decision status
+
+Use one status in the record:
+
+- **Exploratory:** options are being mapped; no recommendation is ready.
+- **Proposed:** a recommendation exists, but the owner has not approved it.
+- **Approved:** the named owner approved the stated action and boundary.
+- **Blocked:** a stop rule prevents a responsible recommendation or action.
+- **Closed:** the outcome was reviewed and the record is no longer active.
+
+Approval applies only to the stated option, evidence, scope, and action boundary. A changed assumption reopens the review.
+
+### 8. Record and learn
 
 When the decision matters, record model or provider, version if available, timestamp, context snapshot, sources, rubric or policy version, reviewer, round count, and approximate cost or latency. After the outcome is known, record what was correct, what failed, whether the dissent helped, and whether routing should change. This is calibration, not proof that the council is accurate in every case.
 
@@ -108,6 +134,7 @@ Return a compact decision record with these fields:
 9. **Safer alternative and stop rule**
 10. **Human approval needed from**
 11. **Smallest next test**
-12. **Record metadata**: timestamp, models or passes, sources, rounds, and material cost or latency
+12. **Decision status**: exploratory, proposed, approved, blocked, or closed
+13. **Record metadata**: timestamp, models or passes, sources, rounds, and material cost or latency
 
 For a simple low-impact question, keep the record short. Use a larger council only when ambiguity, impact, or the cost of a mistake justifies it.
