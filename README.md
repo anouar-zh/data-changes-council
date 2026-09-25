@@ -29,6 +29,52 @@ The skill changes the decision process:
 - it ends with the smallest safe test a team can actually run;
 - it records outcomes so the process can be calibrated over time.
 
+## Install or use it
+
+This repository contains a reusable instruction file. It is not a Python package, MCP server, or application. You do not need an API key just to use the skill. Choose the route that matches your AI tool.
+
+### Codex or another CLI that supports local skills
+
+Clone the repository and copy the skill into the local skills directory:
+
+```bash
+git clone https://github.com/anouar-zh/data-changes-council.git
+mkdir -p ~/.codex/skills/data-changes-council
+cp data-changes-council/SKILL.md ~/.codex/skills/data-changes-council/SKILL.md
+```
+
+Restart the CLI, then ask it to use `data-changes-council`. If your CLI uses another skills directory, copy the same `SKILL.md` there. The skill itself does not install models or providers.
+
+For a project-local setup, keep the file in the project and refer to it explicitly:
+
+```bash
+mkdir -p .codex/skills/data-changes-council
+curl -L https://raw.githubusercontent.com/anouar-zh/data-changes-council/main/SKILL.md \
+  -o .codex/skills/data-changes-council/SKILL.md
+```
+
+### ChatGPT desktop or web
+
+There is nothing to install. Create a Project, upload `SKILL.md` as a project file, and add this as the project instruction:
+
+> Use the Data Changes Council skill for ambiguous or consequential decisions. Route review depth by risk, keep facts and inferences separate, challenge material minority views, show source gaps, and require human approval before external action.
+
+You can also upload `SKILL.md` directly to a chat and say: “Use this skill for the decision below.” ChatGPT Projects keep uploaded files and project instructions together across chats.
+
+If your workspace has the Skills feature, you can upload the file as a skill. Availability depends on your ChatGPT plan and workspace settings.
+
+### Claude Desktop
+
+There is nothing to install in Claude Desktop. Create a Project, upload `SKILL.md` to the project knowledge, then use **Set project instructions** with the same short instruction above. Claude will use the uploaded file in chats inside that project. Project availability depends on your Claude plan.
+
+Claude Desktop and Claude Code are separate products. This repository works in both through the same plain-text `SKILL.md`; the exact local skill folder and available integrations depend on the product and version.
+
+### First request
+
+After adding the file, try:
+
+> Use Data Changes Council to compare three ways to introduce an AI assistant into our support process. Keep data risks, source gaps, disagreement, human approval, and the smallest safe next test visible.
+
 ## How to use it
 
 Use the skill when a question is ambiguous, consequential, or worth reviewing from different perspectives. Give it the question, relevant context, constraints, permitted data or tools, and the decision owner.
