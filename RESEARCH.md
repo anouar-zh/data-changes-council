@@ -37,3 +37,14 @@ These are operating rules for decision quality. They are not a claim that a coun
 - [Minority Sentinel research](https://arxiv.org/abs/2606.29270)
 
 The sources informed the design. They do not endorse this repository.
+
+## Installation references checked
+
+- [OpenAI Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt): upload flow, scanning, and workspace permissions.
+- [OpenAI Skills guide](https://developers.openai.com/api/docs/guides/tools-skills): skill bundle format, `SKILL.md`, and discovery requirements.
+- [OpenAI plugin skills](https://developers.openai.com/plugins/concepts/skills): skill structure and use with ChatGPT and Codex.
+- [Anthropic Agent Skills](https://platform.claude.com/docs/en/managed-agents/skills): `.claude/skills/<skill-name>/SKILL.md` discovery for Claude Code and managed agents.
+- [Anthropic Claude Code CLI reference](https://docs.anthropic.com/en/docs/claude-code/cli-usage): terminal product and CLI behavior.
+- [Anthropic Projects](https://support.anthropic.com/en/articles/9519177-how-can-i-create-and-manage-projects): project knowledge and project instructions.
+
+Product surfaces change. The repository distinguishes native skill installation from uploading `SKILL.md` as project or chat context, because those are different mechanisms.

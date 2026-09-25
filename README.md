@@ -31,47 +31,89 @@ The skill changes the decision process:
 
 ## Install or use it
 
-This repository contains a reusable instruction file. It is not a Python package, MCP server, or application. You do not need an API key just to use the skill. Choose the route that matches your AI tool.
+This repository contains an Agent Skills compatible instruction file. It is not a Python package, MCP server, model, or application. It does not install an API key. The same `SKILL.md` can be used by Codex, ChatGPT Skills, and Claude Code. ChatGPT Projects and Claude Projects can also use it as uploaded context.
 
-### Codex or another CLI that supports local skills
+### Codex CLI or Codex app
 
-Clone the repository and copy the skill into the local skills directory:
+For a project-local Codex skill, run these commands from the repository where you use Codex:
+
+```bash
+mkdir -p .agents/skills/data-changes-council
+git clone https://github.com/anouar-zh/data-changes-council.git /tmp/data-changes-council
+cp /tmp/data-changes-council/SKILL.md .agents/skills/data-changes-council/SKILL.md
+```
+
+The resulting layout must be:
+
+```text
+your-project/
+└── .agents/
+    └── skills/
+        └── data-changes-council/
+            └── SKILL.md
+```
+
+Start Codex in `your-project`. Ask explicitly: `Use the data-changes-council skill for this decision.` Codex can also select a skill automatically when the request matches its description. The Codex app, CLI, and IDE workflows use the same repository skills. OpenAI documents repository skills under `.agents/skills/` and requires one `SKILL.md` per skill directory.
+
+To update it later:
+
+```bash
+curl -L https://raw.githubusercontent.com/anouar-zh/data-changes-council/main/SKILL.md \
+  -o .agents/skills/data-changes-council/SKILL.md
+```
+
+### ChatGPT with Skills
+
+This route is available only where your ChatGPT workspace has the Skills feature enabled. Create a zip whose top level contains the skill folder:
 
 ```bash
 git clone https://github.com/anouar-zh/data-changes-council.git
-mkdir -p ~/.codex/skills/data-changes-council
-cp data-changes-council/SKILL.md ~/.codex/skills/data-changes-council/SKILL.md
+zip -r data-changes-council.zip data-changes-council -x 'data-changes-council/.git/*'
 ```
 
-Restart the CLI, then ask it to use `data-changes-council`. If your CLI uses another skills directory, copy the same `SKILL.md` there. The skill itself does not install models or providers.
+In ChatGPT, open **Plugins**, choose the **Skills** tab, select **Create**, then **Upload from your computer** and select `data-changes-council.zip`. ChatGPT scans an uploaded skill before it becomes available. Review the repository before uploading it, especially when using a skill from someone else. Workspace administrators can disable skill upload or installation.
 
-For a project-local setup, keep the file in the project and refer to it explicitly:
+### ChatGPT desktop or web without Skills
 
-```bash
-mkdir -p .codex/skills/data-changes-council
-curl -L https://raw.githubusercontent.com/anouar-zh/data-changes-council/main/SKILL.md \
-  -o .codex/skills/data-changes-council/SKILL.md
-```
-
-### ChatGPT desktop or web
-
-There is nothing to install. Create a Project, upload `SKILL.md` as a project file, and add this as the project instruction:
+There is no native installation in this route. Create a ChatGPT Project, upload `SKILL.md` as project knowledge, and add this as the project instruction:
 
 > Use the Data Changes Council skill for ambiguous or consequential decisions. Route review depth by risk, keep facts and inferences separate, challenge material minority views, show source gaps, and require human approval before external action.
 
-You can also upload `SKILL.md` directly to a chat and say: “Use this skill for the decision below.” ChatGPT Projects keep uploaded files and project instructions together across chats.
+You can also attach `SKILL.md` to one chat and say: `Use this file as the workflow for the decision below.` This uses the file as context for that chat. It does not install a global skill.
 
-If your workspace has the Skills feature, you can upload the file as a skill. Availability depends on your ChatGPT plan and workspace settings.
+### Claude Code CLI
+
+Claude Code is the terminal product. Install Claude Code separately, then put the skill in the project-level Claude skills directory:
+
+```bash
+mkdir -p .claude/skills/data-changes-council
+git clone https://github.com/anouar-zh/data-changes-council.git /tmp/data-changes-council
+cp /tmp/data-changes-council/SKILL.md .claude/skills/data-changes-council/SKILL.md
+```
+
+The resulting layout must be:
+
+```text
+your-project/
+└── .claude/
+    └── skills/
+        └── data-changes-council/
+            └── SKILL.md
+```
+
+Run `claude` from `your-project`, then ask: `Use the data-changes-council skill for this decision.` Claude Code discovers skills at `.claude/skills/<skill-name>/SKILL.md`. A personal version can be placed at `~/.claude/skills/data-changes-council/SKILL.md`; use the project version when the team should receive it through version control.
 
 ### Claude Desktop
 
-There is nothing to install in Claude Desktop. Create a Project, upload `SKILL.md` to the project knowledge, then use **Set project instructions** with the same short instruction above. Claude will use the uploaded file in chats inside that project. Project availability depends on your Claude plan.
+Claude Desktop's **Extensions** area is for desktop extensions and MCP connections. Copying a `SKILL.md` there does not install this workflow as a native extension.
 
-Claude Desktop and Claude Code are separate products. This repository works in both through the same plain-text `SKILL.md`; the exact local skill folder and available integrations depend on the product and version.
+For a no-code desktop workflow, open Claude's Project interface, create a project, upload `SKILL.md` to project knowledge, and add the short instruction above under **Set project instructions**. If your Claude Desktop version does not show Projects or project knowledge, attach `SKILL.md` to the chat and explicitly ask Claude to use it. That applies the workflow to that conversation only.
+
+Claude Desktop and Claude Code are separate products. Claude Code reads local `.claude/skills/` files. Claude Desktop uses uploaded project or chat context unless you build a separate MCP or desktop extension.
 
 ### First request
 
-After adding the file, try:
+After adding the file, test it with:
 
 > Use Data Changes Council to compare three ways to introduce an AI assistant into our support process. Keep data risks, source gaps, disagreement, human approval, and the smallest safe next test visible.
 
