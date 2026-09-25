@@ -7,6 +7,10 @@ description: Use when a decision benefits from independent AI perspectives, evid
 
 Use this skill when a decision is ambiguous, consequential, or worth reviewing from more than one angle. The council produces a traceable decision record. It does not turn agreement between models into a truth score.
 
+## When to activate
+
+Activate the council when the request involves a consequential choice, competing options, material uncertainty, multiple affected parties, or a meaningful risk of harm or wasted effort. Do not add a full council to a simple factual lookup, formatting request, or low-stakes brainstorm unless the user asks for it. If the user asks for a quick answer, use Quick routing and say which checks were skipped.
+
 ## Operating rules
 
 1. **Separate the jobs.** Use four perspectives:
@@ -58,7 +62,17 @@ Record:
 
 ### 2. Collect independent proposals
 
-Ask each perspective for a recommendation, assumptions, evidence needed, likely failure, and what would change its mind. Do not let one answer anchor the others.
+Ask each perspective for the same pass contract:
+
+- recommendation or refusal to recommend;
+- assumptions and missing inputs;
+- strongest supporting and opposing claim;
+- evidence needed and source quality expected;
+- likely failure and affected party;
+- what would change the view;
+- confidence language limited to confirmed, inferred, predicted, unknown, or blocked.
+
+Keep the proposals separate until the first review pass. Do not let one answer anchor the others.
 
 ### 3. Review the proposals
 
@@ -74,11 +88,23 @@ For every material claim, record:
 
 Do not call a claim confirmed when the only support is model agreement. If a source is missing, stale, inaccessible, or in conflict, say so. Record whether a source is primary, secondary, internal, or a model assertion. A source can support a claim without proving that the recommendation is right.
 
-### 5. Resolve or preserve dissent
+### 5. Compare options without false precision
+
+Compare options against the same qualitative dimensions:
+
+- evidence coverage and important unknowns;
+- reversibility and harm exposure;
+- effort, cost, and time to test;
+- operational fit, ownership, and maintenance;
+- effect on affected people and data boundaries.
+
+Describe the trade-off and the reason for the recommendation. Do not create a numeric score unless the user supplies a validated rubric and the inputs support it.
+
+### 6. Resolve or preserve dissent
 
 State which disagreement was resolved, what evidence resolved it, and which assumption changed. If the disagreement remains, preserve both positions, the minority challenge, and the consequence of being wrong. Do not average incompatible recommendations.
 
-### 6. Apply the stop rule
+### 7. Apply the stop rule
 
 Stop at recommendation level and escalate when any of these is true:
 
@@ -92,7 +118,7 @@ Stop at recommendation level and escalate when any of these is true:
 
 When stopped, recommend the smallest safe test or the exact evidence needed next. Never hide a blocked decision behind a confidence percentage.
 
-### 7. Assign a decision status
+### 8. Assign a decision status
 
 Use one status in the record:
 
@@ -104,7 +130,7 @@ Use one status in the record:
 
 Approval applies only to the stated option, evidence, scope, and action boundary. A changed assumption reopens the review.
 
-### 8. Record and learn
+### 9. Record and learn
 
 When the decision matters, record model or provider, version if available, timestamp, context snapshot, sources, rubric or policy version, reviewer, round count, and approximate cost or latency. After the outcome is known, record what was correct, what failed, whether the dissent helped, and whether routing should change. This is calibration, not proof that the council is accurate in every case.
 
@@ -126,7 +152,7 @@ Return a compact decision record with these fields:
 1. **Decision question**
 2. **Context, constraints, and action boundary**
 3. **Risk class and routing used**
-4. **Options considered**
+4. **Options considered and qualitative comparison**
 5. **Agreement with supporting claims**
 6. **Dissent, minority challenge, and separating assumption**
 7. **Claim ledger and source gaps**

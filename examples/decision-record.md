@@ -18,6 +18,14 @@ The team wants faster first drafts. Customer messages may contain personal data.
 2. Run a narrow pilot for low-risk questions using approved source material.
 3. Run a broad pilot across all support categories.
 
+## Option comparison
+
+| Option | Evidence and unknowns | Reversibility and exposure | Operational fit | Trade-off |
+|---|---|---|---|---|
+| Do nothing | Known process, no new source gap | Low change, no new model exposure | Easy to maintain | No learning or drafting benefit |
+| Narrow pilot | Source coverage still unknown | Reversible and limited to low-risk questions | Manageable for one support lead | Requires a measured test |
+| Broad pilot | Source coverage is unverified | Larger data and quality exposure | Harder to review consistently | Faster reach, higher downside |
+
 ## Agreement with supporting claims
 
 - Start with a limited set of low-risk questions.

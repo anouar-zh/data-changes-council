@@ -28,7 +28,8 @@ The skill changes the decision process:
 - it stops when evidence, ownership, or data boundaries are missing;
 - it ends with the smallest safe test a team can actually run;
 - it records outcomes so the process can be calibrated over time;
-- it distinguishes exploratory, proposed, approved, blocked, and closed decisions.
+- it distinguishes exploratory, proposed, approved, blocked, and closed decisions;
+- it compares options qualitatively without inventing precise scores.
 
 ## Install or use it
 
