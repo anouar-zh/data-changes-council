@@ -1,7 +1,7 @@
 {
-  "name": "llm-council",
+  "name": "councilforge",
   "version": "0.1.0",
-  "description": "Multi-model AI deliberation — 5 LLMs debate every decision, the best answer wins",
+  "description": "Evidence-aware multi-model deliberation with visible dissent, policy gates, and human approval.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -14,14 +14,14 @@
     "test:llms": "tsx scripts/test-all-llms.ts"
   },
   "keywords": [
-    "mama",
     "llm",
-    "council",
     "multi-model",
     "deliberation",
-    "ai"
+    "ai-governance",
+    "human-in-the-loop",
+    "decision-support"
   ],
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "dependencies": {
     "zod": "^3.23.0"
   },
